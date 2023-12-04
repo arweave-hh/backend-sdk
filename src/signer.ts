@@ -1,6 +1,5 @@
 import Arweave from 'arweave';
 import { JWKInterface } from 'arweave/node/lib/wallet';
-import { jsonToJWKInterface } from './utils';
 import Transaction from 'arweave/node/lib/transaction';
 
 export default class Signer {
@@ -8,8 +7,8 @@ export default class Signer {
   private jwk: JWKInterface;
   public arweave: Arweave;
 
-  constructor(privateKey: string | object | Record<string, string> | JWKInterface) {
-    this.jwk = jsonToJWKInterface(privateKey);
+  constructor({ jwk }: { jwk: JWKInterface }) {
+    this.jwk = jwk;
     this.arweave = Arweave.init({});
   }
 

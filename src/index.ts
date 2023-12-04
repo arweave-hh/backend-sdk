@@ -1,7 +1,3 @@
-export async function compress(data: Buffer): Promise<Buffer> {
-  throw Error();
-}
+import { bundleAndSignData } from "arbundles/node";
 
-export async function upload(data: Buffer) {
-  throw Error();
-}
+
