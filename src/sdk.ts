@@ -1,21 +1,15 @@
-import Bundler from "./bundler";
-import Signer from "./signer";
-import { jsonToJWKInterface } from "./utils";
+import { compress } from "./compress";
+import { irys } from "./irys";
+import { Metadata } from "./utils";
 
 export default class SDK {
 
-  private signer: Signer;
-  private bundler: Bundler;
-
-  constructor(privateKey: string) {
-    this.signer = new Signer({ jwk: jsonToJWKInterface(privateKey) });
-    this.bundler = new Bundler();
+  async upload(data: Buffer, metadata: Metadata): Promise<Record<string, any>> {
+    const compressedData = await compress(data, metadata);
+    if (!compressedData) {
+      throw new Error("Failed to compress data");
+    }
+    const receipt = await irys.upload(data);
+    return { ...receipt };
   }
-
-  async upload(data: Buffer): Promise<Record<string, string>> {
-    const result = {};
-    
-    return result;
-  }
-
 }

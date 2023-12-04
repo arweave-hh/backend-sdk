@@ -3,6 +3,10 @@
   "module": "index.ts",
   "devDependencies": {
     "@irys/sdk": "^0.1.1",
+    "@types/imagemin": "^8.0.5",
+    "@types/imagemin-jpegtran": "^5.0.4",
+    "@types/imagemin-svgo": "^10.0.5",
+    "@types/imagemin-webp": "^7.0.3",
     "bun-types": "latest"
   },
   "peerDependencies": {
@@ -11,6 +15,11 @@
   "type": "module",
   "dependencies": {
     "arbundles": "^0.10.0",
-    "arweave": "^1.14.4"
+    "arweave": "^1.14.4",
+    "imagemin": "^8.0.1",
+    "imagemin-jpegtran": "^7.0.0",
+    "imagemin-pngquant": "^9.0.2",
+    "imagemin-svgo": "^10.0.1",
+    "imagemin-webp": "^8.0.0"
   }
 }

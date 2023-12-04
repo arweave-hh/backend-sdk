@@ -5,3 +5,7 @@ export function jsonToJWKInterface(key: Record<string, string> | string | object
 }
 
 
+export interface Metadata {
+  id: string;
+  fileType: "jpeg" | "png" | "svg" | "webp"
+}
