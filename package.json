@@ -9,6 +9,7 @@
   },
   "type": "module",
   "dependencies": {
-    "@irys/sdk": "^0.1.1"
+    "arbundles": "^0.10.0",
+    "arweave": "^1.14.4"
   }
 }
